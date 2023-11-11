@@ -1,0 +1,51 @@
+{% extends 'caninstitutehome.html' %}
+ 
+{% block content %}
+<style type="text/css">
+    .container{
+        background-color: rgb(243, 255, 255);
+    }
+</style>
+ 
+<div class="container ">
+        
+    <div class="card-columns" style="padding: 10px; margin: 20px;">
+        <div class="card" align="centre " style="width: 45rem; border:5px black solid">
+            <img class="card-img-top" src="http://kmit.in/emagazine/wp-content/uploads/2018/02/karnataka-results.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Score: {{score}}</h5>
+ 
+                <p class="card-text">Percentage: {{percent}}%</p>
+                <p class="card-text">Time Taken: {{time}} Minutes</p>
+                <p class="card-text">Correct answers: {{correct}}</p>
+                <p class="card-text">Incorrect answers: {{wrong}}</p>
+                <p class="card-text">Total questions: {{total}}</p>
+                <hr >
+                {% for q in users %}
+                <h2>{{q.Question}}</h2>
+                <br>
+                <br>
+              <p>  A:{{q.a}} </p>
+              <p>  B:{{q.B}} </p>
+              <p>  C:{{q.C}} </p>
+              <p>  D:{{q.D}} </p>
+              <br>
+              <br>
+              <hr>
+              <h3>CORRECT ANSWER</h3>
+              <p>{{q.Answer}}</p>
+<br>
+<br>
+<h3>ANSWER EXPLANATION </h3>
+                {{q.Answer_expalanation}}
+                <hr>
+                {% endfor %}
+                <h5>All the best for next quiz!</h5>
+            </div>
+        </div>
+        
+    </div>
+ 
+</div>
+ 
+{% endblock %}
