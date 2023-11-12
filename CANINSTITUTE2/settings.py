@@ -26,10 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%**r9(oaki#y$hwqf4nua5()qu!89169i70p^t4mt(ftjn+ffl'
+SECRET_KEY = 'ugdaslhgwifdliouchlewrdoche'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'elearningplatform',
     'embed_video',
+
     'whitenoise.runserver_nostatic',
     
 ]
@@ -58,8 +59,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.admindocs.middleware.XViewMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware'
+    'django.middleware.security.SecurityMiddleware', 
+
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
+
 ]
+
+
+
+
 
 ROOT_URLCONF = 'CANINSTITUTE2.urls'
 
@@ -80,6 +90,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'CANINSTITUTE2.wsgi.application'
+prod_db=dj_database_url.config(conn_max_age=5000)
+
+
 
 
 # Database
@@ -129,10 +142,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS =(os.path.join(BASE_DIR, '/static'),)
 django_heroku.settings(locals())
+WHITENOISE_USE_FINDERS = True
 
 STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_URL="/media/"
+NEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 # Default primsary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

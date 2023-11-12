@@ -5,6 +5,11 @@
     .container{
         background-color: rgb(243, 255, 255);
     }
+    .cards-columns{
+        font-size: large;
+        
+        font-family: 'Times New Roman';
+    }
 </style>
  
 <div class="container ">
@@ -13,26 +18,28 @@
         <div class="card" align="centre " style="width: 45rem; border:5px black solid">
             <img class="card-img-top" src="http://kmit.in/emagazine/wp-content/uploads/2018/02/karnataka-results.jpg" alt="Card image cap">
             <div class="card-body">
-                <h5 class="card-title">Score: {{score}}</h5>
+                <h3 class="card-title">Score: {{score}}</h5>
  
-                <p class="card-text">Percentage: {{percent}}%</p>
-                <p class="card-text">Time Taken: {{time}} Minutes</p>
-                <p class="card-text">Correct answers: {{correct}}</p>
-                <p class="card-text">Incorrect answers: {{wrong}}</p>
-                <p class="card-text">Total questions: {{total}}</p>
+               <h3> <p class="card-text">Percentage: {{percent}}%</p> </h3>
+              <h3>  <p class="card-text">Time Taken: {{time}} Minutes</p> </h3>
+
+               <h3><p class="card-text">Correct answers: {{correct}}</p>  </h3>
+                <h3><p class="card-text">Incorrect answers: {{wrong}}</p> </h3>
+
+               <h3> <p class="card-text">Total questions: {{total}}</p> </h3>
                 <hr >
                 {% for q in users %}
-                <h2>{{q.Question}}</h2>
+                <h3>{{q.Question}}</h3>
                 <br>
                 <br>
-              <p>  A:{{q.a}} </p>
+              <p>  A:{{q.A}} </p>
               <p>  B:{{q.B}} </p>
               <p>  C:{{q.C}} </p>
               <p>  D:{{q.D}} </p>
               <br>
               <br>
               <hr>
-              <h3>CORRECT ANSWER</h3>
+              <h4>CORRECT ANSWER</h4>
               <p>{{q.Answer}}</p>
 <br>
 <br>
