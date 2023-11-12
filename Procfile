@@ -1,1 +1,2 @@
-web: gunicorn CANINSTITUTE2.wsgi                     
+web: gunicorn CANINSTITUTE2.wsgi
+--preload                     
