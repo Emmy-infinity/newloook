@@ -1,1 +1,1 @@
-web gunicorn caninstitute2.wsgi --log-file-
+web: gunicorn caninstitute2.wsgi --log-file-
