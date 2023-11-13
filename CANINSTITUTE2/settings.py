@@ -101,6 +101,7 @@ prod_db=dj_database_url.config(conn_max_age=5000)
 DATABASES={
 'default':{
 'ENGINE':'django.db.backends.sqlite3',
+'NAME':'Caninstitute',
 
 }}
 
