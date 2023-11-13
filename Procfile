@@ -1,3 +1,2 @@
-web: gunicorn CANINSTITUTE2.wsgi 
--log-file-
+web: gunicorn CANINSTITUTE2.wsgi : application 
                    
