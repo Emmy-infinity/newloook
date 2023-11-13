@@ -98,7 +98,7 @@ prod_db=dj_database_url.config(conn_max_age=5000)
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-#DATABASES['default']=dj_database_url.#config(conn_max_age=600)
+DATABASES['default']=dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
