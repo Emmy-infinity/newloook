@@ -1,5 +1,5 @@
 from django.shortcuts import redirect,render
-from django.core.paginator import Paginator,PageNotAnInteger
+from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
 from django.contrib.auth import login, logout,authenticate
 from .forms import *
 
