@@ -100,10 +100,8 @@ prod_db=dj_database_url.config(conn_max_age=5000)
 
 DATABASES={
 'default':{
-'ENGINE':'django.db.backends.msql',
-'NAME':'django_deploy',
-'USER':'root',
-'PASSWORD':'your_password',
+'ENGINE':'django.db.backends.sqlite3',
+
 }}
 
 # Password validation
