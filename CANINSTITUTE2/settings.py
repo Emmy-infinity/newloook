@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ugdaslhgwifdliouchlewrdoche'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -98,8 +98,13 @@ prod_db=dj_database_url.config(conn_max_age=5000)
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES['default']=dj_database_url.config(conn_max_age=600)
-
+DATABASES={
+'default':{
+'ENGINE':'django.db.backends.msql',
+'NAME':'django_deploy',
+'USER':'root',
+'PASSWORD':'your_password',
+}}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
