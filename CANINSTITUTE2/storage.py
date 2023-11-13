@@ -1,0 +1,3 @@
+from white noise.storage import CompressedManifestStaticFileStorage
+class WhiteNoiseStaticFileStorage(CompressedManifestStaticFileStorage):
+ manifest_strict=False
