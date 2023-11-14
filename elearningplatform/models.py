@@ -19,7 +19,7 @@ class Add_Questions(models.Model):
     C = models.CharField(max_length=20000,null=True)
     D = models.CharField(max_length=20000,null=True)
     E=models.CharField(max_length=20000, null=True,blank=True)
-    Answer = models.CharField(max_length=20000,null=True blank=True)
+    Answer = models.CharField(max_length=20000,null=True ,blank=True)
     Answer_expalanation=models.CharField(max_length=20000,null=True)
     
     def __str__(self):
