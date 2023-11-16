@@ -7,7 +7,7 @@ from .models import *
 def home(request):
      videoobj=Videotutorial.objects.all()
      context={'videoobj':videoobj}
-     return render(request,'elearningplatform/caninstitutehome.html',context)
+     return render(request,'caninstitutehome.html',context)
 def quizz(request):
     question=Add_Questions.objects.all()
            
@@ -49,14 +49,14 @@ def quizz(request):
         }
         time+=time
         
-        return render(request,'elearningplatform/results.html',context)
+        return render(request,'results.html',context)
     else:
     
       
         
         
         
-        return render(request,'elearningplatform/multichoice.html',{'users': users})
+        return render(request,'multichoice.html',{'users': users})
  
 def Notes(request):
     return(request,'cansinstitute.html')
@@ -72,7 +72,7 @@ def Article(request):
     
     articles=Articles2.objects.all()
     context={'articles':articles}
-    return render(request,'elearningplatform/caninstitutearticle.html',context)
+    return render(request,'caninstitutearticle.html',context)
 
 def Learning_materials(request):
     return render(request,'multichoice.html')
