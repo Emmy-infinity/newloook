@@ -10,6 +10,7 @@ urlpatterns= [ path("",views.home, name="home"),
              path('quizz/',views.quizz,name='quizz'),
              path('login/', views.loginPage,name='login'),
              path('logout/', views.logoutPage,name='logout'),
+            # path('coursemenu/',views.coursemenu,name='coursemenu'),
              
              path('Learningmaterials/',views.Learning_materials,name='LearningMaterials'),
              path ('privacypolicy/',views.PrivacyPolicy,name='Privacy Policy'),

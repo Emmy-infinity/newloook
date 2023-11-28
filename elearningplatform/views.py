@@ -9,6 +9,8 @@ def home(request):
      videoobj=Videotutorial.objects.all()
      context={'videoobj':videoobj}
      return render(request,'caninstitutehome.html',context)
+#def coursemenu(request):
+ #   return render(request, 'coursemenu.html')
 
 def quizz(request):
     question=Add_Questions.objects.all()

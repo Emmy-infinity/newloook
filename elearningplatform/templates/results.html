@@ -1,4 +1,6 @@
+
 {% extends 'caninstitutehome.html' %}
+{% load static %}
  
 {% block content %}
 <style type="text/css">
@@ -16,7 +18,7 @@
         
     <div class="card-columns" style="padding: 10px; margin: 20px;">
         <div class="card" align="centre " style="width: 42rem; border:5px black solid">
-            <img class="card-img-top" src="web2.jpg" alt="Card image cap">
+            <img class="card-img-top" src="{%static  'result.jpg' %}" alt="Card image cap">
             <div class="card-body">
                 <h3 class="card-title">Score: {{score}}</h5>
  
