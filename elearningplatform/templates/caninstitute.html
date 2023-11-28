@@ -1,16 +1,63 @@
-
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <title>
+      {% block title%}
+      {% endblock %}
    </title>
+   <meta name="viewport"  content="width=device-width,initial-scale=1"7>
+      <head>
+   <style type="text/css">
+      
+
+      .dd {
+         position:relative;
+         display:inline-block;
+      }
+      .dd-btn {
+         padding:15px;
+         text-align:center;
+         background:#0c1624;
+         border:none;
+         width:300px;
+         color:#f8f9f9;
+
+
+      }
+      .dd-content {
+         position: absolute;
+         width:100%;
+         box-shadow: 0 18px 36px rgba(0,0,0,0.30) , 0 14px 11px rgba(0,0,0,0.22) ;
+         height:0px;
+         transition: height 3s;
+         overflow:scroll;
+        }
+        .dd:hover> .dd-content {
+         height:150px;
+
+        }
+        .dd-content > a{
+         display: block;
+         padding: 15pX;
+         background-color: #d8d0d3;
+         text-decoration:none;
+         color: black;
+        }
    
   
    
-   <style type="text/css">
+
+
+
+
    * {
       box-sizing: border-box;
     }
     html, body {
       margin: 0;
       padding: 0;
-                                         background-image:url("emmy2.jpg");
+      background-image: url("/static/background.jpg");
+      
        background-repeat: no-repeat;
       background-position: fixed;
       background-attachment: center;
@@ -127,7 +174,8 @@
          padding: 15px;
       }
       header {
-         background:navy;
+      background-color: rgb(7, 124, 150);
+      
       }
       footer {
          background: #333333;
@@ -155,22 +203,61 @@
          text-decoration: none; /* remove underline */
          color: #e7e7df;
       }
-      img {
-         max-width: 100%;
-         height: auto;
-
+      .img{
+         width: 150px;
       }
       .login-register{
          align-content: last baseline;
 
       }
-      
-      
+      .breadcrumbs {
+         background: #0076ff;
+         padding: 15px;
+      }
+      .breadcrumbs ul {
+         margin: 0;
+         padding: 0;
+
+      }
+      .breadcrumbs li {
+         display: inline;
+      }
+      .breadcrumbs li::before{
+         content: "|";
+         color: white;
+         margin: 0 8px;
+      }
+      .breadcrumbs li > a {
+         color: #f5f1f1;
+         text-decoration: none;
+         border-bottom: 1px solid white;
+         border: none;
+
+      }
+      .breadcrumbs li:last-child > a {
+         color: white;
+         text-decoration: none;
+         border: none;
+      }
+      .logo >img {
+         width: 150px;
+         align-self: center;
+      }
+      .loginbutton {
+         align-items:end;
+      }
    </style>
+
 </head>
 <body>
+   
    <header>
-     <span> <p><h2> <center>CAN INSTITUTE FOR PROFESSIONAL STUDIES AND EXCELLENCE  (CIPSE)</center></h2></p>
+     <span> 
+      
+       <center> <div class="logo"><img src="{% static 'logo.png' %}" alt="logo" > </div></center>
+      
+      <p><h2> <center>CAN INSTITUTE FOR PROFESSIONAL STUDIES AND EXCELLENCE <br> (CIPSE)</center></h2></p>
+      
     
       <div class="submit-btn">
         
@@ -180,38 +267,51 @@
       <input type="submit" name="SEARCH" id="submit">
    
     </div>
+    
       
       
       </span>
       </div>
-      
-      <br>
-      
-      
+     <div class="loginbutton"> <a href="{% url 'elearningplatform:login'%}"><button> LOGIN</button></a> </div>  
    </header>
-   <div class="nav-bar">
-    <ul>
-      <li><a href="#" class="active"> Home </a></li>
-      <li><a href="quizz/"> ONLINE TESTS </a></li>
-      <li><a href="#"> LEARNING MATERIALS </a></li>
-      <li><a href="#">VIDEO TUTORIALS</a></li>
-      
-      
-    </ul>
-  </div>
+   <div class="breadcrumbs">
+      <ul>
+         <li> <a href="">Admissions requirements</a></li>
+         <li> <a href="{% url 'elearningplatform:register' %}">login-register</a></li>
+         <li> <a href="">Application forms</a></li>
+         <li> <a href="">Diploma courses</a></li>
+         <li> <a href="">Undergraduate Courses</a></li>
+         <li> <a href="">Post Graduate Courses</a></li>
+         <li> <a href="">Professional Courses</a></li>
+         <li> <a href="">About CIPSE</a></li>
+         <li> <a href="">Contact Us</a></li>
+         <li> <a href="">Support CIPSE</a></li>
+         <li> <a href="">Terms of Service</a></li>
+         <br>
+         <li> <a href="{% url 'elearningplatform:logout'%}">Log Out</a></li>
+      </ul>
+   </div>
+   
    <div class="row">
       <div class="col-md-3 col-l-3 menu">
+         <div class="dd">
+            <button class="dd-btn"><b>HOME</b></button>
+            <div class="dd-content">
+            <a href="#" class="active"> <b></b> <COURSES/a>
+            <a href="{% url 'elearningplatform:quizz' %}"> <b> ONLINE ASSESSMENTS </b>  </a>
+            <a href="{% url 'elearningplatform:Article' %}"> <b>ARTICLES</b>  </a>
+            <a href="quizz/"> <b>DIPLOMA COURSES </b>  </a>
+            <a href="quizz/"> <b>UNDERGRADUATE COURSES </b>  </a>
+            <a href="#">  <b> POSTGRADUATE COURSES  </b> </a></li>
+            <a href="#">  <b> PROFESSIONAL COURSES </b> </a>
+             <a href="#">  <b> VIDEO TUTORIALS </b> </a>
+            </div>
+            
+            
+          
+        </div>
          
-         <ul>
-            <li> <a href="#"> HOME</a></li>
-            <li><a href="#"> COURSES</a></li>
-            <li><a href="#"> GALLERY</a></li>
-            <li><a href="Article/"> LEARNING MATERIALS</a></li>
-            <li><a href="#"> ABOUT US</a></li>
-            <li><a href="#"> CONTACTS US</a></li>
-            <li><a href="' quizz/ ">TAKE ONLINE ASSESSMENT</a></li>
-         </ul>   
-   
+        
    
          
       </div>

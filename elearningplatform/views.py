@@ -4,10 +4,12 @@ from django.contrib.auth import login, logout,authenticate
 from .forms import *
 
 from .models import *
+from django.contrib.auth.decorators import login_required
 def home(request):
      videoobj=Videotutorial.objects.all()
      context={'videoobj':videoobj}
      return render(request,'caninstitutehome.html',context)
+
 def quizz(request):
     question=Add_Questions.objects.all()
            
@@ -87,12 +89,12 @@ def registerPage(request):
             form=createuserform(request.POST)
             if form.is_valid():
              user= form.save()
-            return redirect('login')
+            return redirect('elearningplatform:login')
         context={'form':form}
         return render(request,'register.html', context)
 def loginPage(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('elearningplatform:home')
     else:
        if request.method=="POST":
         username=request.POST.get('username')
@@ -102,7 +104,7 @@ def loginPage(request):
             login(request,user)
             return redirect('/')
        context={}
-       return render(request,'register.html',context)
+       return render(request,'login.html',context)
  
 def logoutPage(request):
     logout(request)
