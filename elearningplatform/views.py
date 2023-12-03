@@ -64,7 +64,7 @@ def helpcipse(request):
     return render(request,'helpcipse.html')
 
 def diplomacourses(request):
-    return render(request,'diplomacourse.html')
+    return render(request,'diplomacourses.html')
 def undergraduatecourses(request):
     return render(request,'undergraduatecourses.html')
 def postgraduatecourses(request):
