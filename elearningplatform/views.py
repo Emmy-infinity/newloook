@@ -58,8 +58,7 @@ def quizz(request):
         
         return render(request,'multichoice.html',{'users': users})
 def certificatecourses(request):
-    certificate=Certificates.objects.all()
-    context={'certificate': certificate}
+   
     return render(request,'certificatecourses.html')
 def helpcipse(request):
     return render(request,'helpcipse.html')
