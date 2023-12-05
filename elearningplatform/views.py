@@ -15,7 +15,7 @@ def home(request):
 def quizz(request):
     question=Add_Questions.objects.all()
            
-    paginator=Paginator(question,180)
+    paginator=Paginator(question,50)
     page = request.GET.get('page', 1)
     try:
           users = paginator.page(page)
