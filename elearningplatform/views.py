@@ -51,7 +51,7 @@ def quizz(request):
             'percent':percent,
             'total':total
         }
-        time+=time
+        
         
         return render(request,'results.html',context)
     else:
