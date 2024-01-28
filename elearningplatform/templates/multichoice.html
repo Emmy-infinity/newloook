@@ -32,7 +32,7 @@
 <div class="container "><center>
 <h1><hr>PROJECT MANAGEMENT PROFESSIONAL ASSESSMENTS</h1>
 </center>
-<div align="right " id="displaytimer"><b><h1>Timer: 0 Minutes </h1></b></div>
+<div align="right " id="displaytimer"><b> <h1>Timer: 0 Minutes </h1></b></div>
  
  <form method='post' action=''>
     {% csrf_token %}
@@ -121,7 +121,7 @@
                 t+=1
                 timer.innerHTML ="<b>Timer: " +t+" Minutes</b>"
                 inputtag.value = t
-            },10000)
+            },1000)
         </script>
     {% endblock script %}
  
