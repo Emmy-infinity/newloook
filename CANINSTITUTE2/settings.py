@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'elearningplatform',
     'embed_video',
-    'user_visit',
+    
 
     'whitenoise.runserver_nostatic',
     
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.admindocs.middleware.XViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'user_visit.middleware.UserVisitMiddleware',
+    
 
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
